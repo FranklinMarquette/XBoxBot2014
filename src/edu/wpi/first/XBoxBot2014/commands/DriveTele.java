@@ -29,7 +29,7 @@ public class DriveTele extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        chassis.driveTele(oi.stick.getRawAxis(2), oi.stick.getRawAxis(5));
+        chassis.driveTele(oi.joystick.getRawAxis(2), oi.joystick.getRawAxis(5));
     }
 
     // Make this return true when this Command no longer needs to run execute()

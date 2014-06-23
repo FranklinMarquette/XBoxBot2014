@@ -33,12 +33,10 @@ public class XBoxBot2014 extends IterativeRobot {
      */
     public void robotInit() {
         // instantiate the command used for the autonomous period
-        autonomousCommand = new AUTONOMOUS();
-        
-        SmartDashboard.putData(Scheduler.getInstance());
-
         // Initialize all subsystems
         CommandBase.init();
+        
+        autonomousCommand = new AUTONOMOUS();
     }
 
     public void autonomousInit() {

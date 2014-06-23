@@ -3,7 +3,7 @@ package edu.wpi.first.XBoxBot2014;
 
 import edu.wpi.first.XBoxBot2014.commands.FIRE;
 import edu.wpi.first.XBoxBot2014.commands.ReleaseTension;
-import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.XBoxBot2014.subsystems.XBox;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -44,15 +44,15 @@ public class OI {
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
     
-    public Joystick stick = new Joystick(1);
+    public XBox joystick = new XBox(1);
     
-    private Button button = new JoystickButton(stick, 0);
-    private Button blob = new JoystickButton(stick, 1);
+    private Button fire = new JoystickButton(joystick, XBox.A_BUTTON);
+    private Button release = new JoystickButton(joystick, XBox.B_BUTTON);
 
 public OI() {
     
-    button.whenPressed(new FIRE());
-    blob.whenPressed(new ReleaseTension());
+    fire.whenPressed(new FIRE());
+    release.whenPressed(new ReleaseTension());
     
 }
         
