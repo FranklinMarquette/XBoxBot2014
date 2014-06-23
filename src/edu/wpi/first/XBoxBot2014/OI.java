@@ -47,7 +47,7 @@ public class OI {
     public Joystick stick = new Joystick(1);
     
     private Button button = new JoystickButton(stick, 0);
-    private Button blob = new JoystickButton(stick, 2);
+    private Button blob = new JoystickButton(stick, 1);
 
 public OI() {
     
