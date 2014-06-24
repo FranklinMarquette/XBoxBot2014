@@ -1,12 +1,19 @@
 
 package edu.wpi.first.XBoxBot2014;
 
-import edu.wpi.first.XBoxBot2014.commands.FIRE;
-import edu.wpi.first.XBoxBot2014.commands.ReleaseTension;
 import edu.wpi.first.XBoxBot2014.subsystems.XBox;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-
+import edu.wpi.first.XBoxBot2014.commands.ArmLauncher;
+import edu.wpi.first.XBoxBot2014.commands.ArmStop;
+import edu.wpi.first.XBoxBot2014.commands.FIRE;
+import edu.wpi.first.XBoxBot2014.commands.ForksDown;
+import edu.wpi.first.XBoxBot2014.commands.ForksStop;
+import edu.wpi.first.XBoxBot2014.commands.ForksUp;
+import edu.wpi.first.XBoxBot2014.commands.ManualPullSpring;
+import edu.wpi.first.XBoxBot2014.commands.ManualReleaseSpring;
+import edu.wpi.first.XBoxBot2014.commands.ManualStop;
+import edu.wpi.first.XBoxBot2014.commands.ReleaseTension;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -46,14 +53,38 @@ public class OI {
     
     public XBox joystick = new XBox(1);
     
-    private Button fire = new JoystickButton(joystick, XBox.A_BUTTON);
-    private Button release = new JoystickButton(joystick, XBox.B_BUTTON);
+    private Button fire = new JoystickButton(joystick, XBox.LB_BUTTON);
+    private Button releaseTension = new JoystickButton(joystick, XBox.B_BUTTON);
+    private Button armLauncher = new JoystickButton(joystick, XBox.A_BUTTON);
+    private Button armStop = new JoystickButton(joystick, XBox.A_BUTTON);
+    private Button releaseManual = new JoystickButton(joystick, XBox.BACK_BUTTON);
+    private Button armStop2 = new JoystickButton(joystick, XBox.BACK_BUTTON);
+    private Button forksUp = new JoystickButton(joystick, XBox.X_BUTTON);
+    private Button forksStop = new JoystickButton(joystick, XBox.X_BUTTON);
+    private Button forksDown = new JoystickButton(joystick, XBox.Y_BUTTON);
+    private Button forksStop2 = new JoystickButton(joystick,XBox.Y_BUTTON);
+    private Button manualPull = new JoystickButton(joystick, XBox.START_BUTTON);
+    private Button manualStop = new JoystickButton(joystick, XBox.START_BUTTON);
+    private Button manualRelease = new JoystickButton(joystick, XBox.RB_BUTTON);
+    private Button manualStop2 = new JoystickButton(joystick, XBox.RB_BUTTON);
 
 public OI() {
     
-    fire.whenPressed(new FIRE());
-    release.whenPressed(new ReleaseTension());
-    
+        armLauncher.whenPressed(new ArmLauncher());
+        armStop.whenReleased(new ArmStop());
+        armStop2.whenReleased(new ArmStop());
+        releaseTension.whenPressed(new ReleaseTension());
+        releaseManual.whenPressed(new ReleaseTension());//change to ReleaseTension()
+        forksUp.whenPressed(new ForksUp());
+        forksDown.whenPressed(new ForksDown());
+        forksStop.whenReleased(new ForksStop());
+        forksStop2.whenReleased(new ForksStop());
+        fire.whenPressed(new FIRE());
+        manualPull.whenPressed(new ManualPullSpring());
+        manualStop.whenReleased(new ManualStop());
+        manualRelease.whenPressed(new ManualReleaseSpring());
+        manualStop2.whenReleased(new ManualStop());
+        
 }
         
 }

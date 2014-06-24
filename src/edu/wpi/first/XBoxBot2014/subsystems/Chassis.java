@@ -5,7 +5,6 @@
  */
 package edu.wpi.first.XBoxBot2014.subsystems;
 
-import edu.wpi.first.XBoxBot2014.OI;
 import edu.wpi.first.XBoxBot2014.RobotMap;
 import edu.wpi.first.XBoxBot2014.commands.DriveTele;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -20,8 +19,6 @@ public class Chassis extends Subsystem {
     // here. Call these from Commands.
     RobotDrive drive;
     
-    OI oi = new OI();
-
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         setDefaultCommand(new DriveTele());
@@ -32,8 +29,8 @@ public class Chassis extends Subsystem {
         drive.setSafetyEnabled(false);
     }
     
-    public void driveTele(double leftValue, double rightValue){
-        drive.tankDrive(leftValue, rightValue);
+    public void driveTele(double moveValue, double turnValue){
+        drive.arcadeDrive(moveValue, turnValue);
     }
     
     public void setSpeed(double speed){

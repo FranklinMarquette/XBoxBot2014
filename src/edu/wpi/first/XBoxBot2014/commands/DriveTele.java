@@ -28,7 +28,7 @@ public class DriveTele extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        chassis.driveTele(oI.joystick.getLeftJoyY(), oI.joystick.getRightJoyY());
+        chassis.driveTele(oI.joystick.getLeftJoyY(), oI.joystick.getLeftJoyX());
     }
 
     // Make this return true when this Command no longer needs to run execute()
