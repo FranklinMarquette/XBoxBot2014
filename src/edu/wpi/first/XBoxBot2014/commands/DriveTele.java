@@ -6,7 +6,6 @@
 package edu.wpi.first.XBoxBot2014.commands;
 
 import edu.wpi.first.XBoxBot2014.OI;
-import edu.wpi.first.wpilibj.Joystick;
 
 /**
  *
@@ -14,7 +13,7 @@ import edu.wpi.first.wpilibj.Joystick;
  */
 public class DriveTele extends CommandBase {
     
-    OI frank = new OI();
+    OI oI = new OI();
     
     public DriveTele() {
         // Use requires() here to declare subsystem dependencies
@@ -29,7 +28,7 @@ public class DriveTele extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        chassis.driveTele(oi.joystick.getRawAxis(2), oi.joystick.getRawAxis(5));
+        chassis.driveTele(oI.joystick.getLeftJoyY(), oI.joystick.getRightJoyY());
     }
 
     // Make this return true when this Command no longer needs to run execute()

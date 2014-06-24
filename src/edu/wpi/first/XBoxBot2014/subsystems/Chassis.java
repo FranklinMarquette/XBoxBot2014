@@ -8,7 +8,6 @@ package edu.wpi.first.XBoxBot2014.subsystems;
 import edu.wpi.first.XBoxBot2014.OI;
 import edu.wpi.first.XBoxBot2014.RobotMap;
 import edu.wpi.first.XBoxBot2014.commands.DriveTele;
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
